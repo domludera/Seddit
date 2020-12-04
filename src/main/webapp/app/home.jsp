@@ -75,6 +75,15 @@
             <label for="content"><h5>Enter your content:</h5></label><br>
             <textarea name="content" id="content" class="form-control" rows="3"></textarea> <br><br>
             <input type="file" class="btn btn-secondary" name="file" size="50"/>
+            <label for="visibility">Choose a visibility:</label>
+            <select id="visibility" name="visibility">
+                <option value="public">Public</option>
+                <option value="admin">Admin</option>
+                <option value="concordia">Concordia</option>
+                <option value="encs">ENCS</option>
+                <option value="soen">SOEN</option>
+                <option value="comp">COMP</option>
+            </select>
 
             <input type="submit" class="btn btn-primary" name="postmessage" value="Post"/>
         </form>

@@ -1,4 +1,5 @@
 {
+  "default": "public",
   "memberships": [
     {
       "name": "admin",

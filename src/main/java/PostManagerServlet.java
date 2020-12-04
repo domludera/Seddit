@@ -16,18 +16,7 @@ public class PostManagerServlet extends HttpServlet {
 
         HttpSession session = req.getSession();
 
-        //getting username from cookie
         String username = (String) session.getAttribute("username");
-//        Cookie[] cookies = req.getCookies();
-//        if (cookies != null) {
-//            for (int i = 0; i < cookies.length; i++) {//can probably clean up using stream
-//                Cookie cookie = cookies[i];
-//                if ((cookie.getName()).equals("user")) {
-//                    username = cookie.getValue();
-//                    break;
-//                }
-//            }
-//        }
 
         Part filePart = req.getPart("file");
 
@@ -35,7 +24,8 @@ public class PostManagerServlet extends HttpServlet {
         //sending message to DB with title, content, posterID, and current system time
         String title = req.getParameter("title");
         String content = req.getParameter("content");
-        db.postMessage(title, content, username, filePart);
+        String visibility = req.getParameter("visibility");
+        db.postMessage(title, content, username, filePart, visibility);
         resp.sendRedirect("/app/home");
 
 
